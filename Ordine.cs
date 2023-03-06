@@ -9,9 +9,11 @@ namespace programMain
 {
     class Ordine
     {
-        //public List<Prodotto> Carrello;
-        private List<Prodotto> Carrello { get; set; }
-        private IOrderedEnumerable<Prodotto> RiepilogoCarrelo { get; set; }
+        //private List<Prodotto> Carrello;
+        private double costot;
+
+        public List<Prodotto> Carrello { get; set; }
+        public IOrderedEnumerable<Prodotto> RiepilogoCarrelo { get; set; }
 
         public Ordine()
         {
@@ -33,8 +35,10 @@ namespace programMain
         {
             foreach (var prodotto in RiepilogoCarrelo)
             {
+                costot += prodotto.Tot;
                 prodotto.Proprieta();
             }
+            Console.WriteLine("\n Spesa totale:" + costot);
         }
     }
 }
